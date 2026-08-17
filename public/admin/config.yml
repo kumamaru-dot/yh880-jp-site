@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: PLACEHOLDER/yh880-jp-site
+  repo: kumamaru-dot/yh880-jp-site
   branch: main
 
 locale: ja
