@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: PLACEHOLDER/yh880-jp-site
+  branch: main
+
+locale: ja
+media_folder: public/images
+public_folder: /yh880/images
+
+collections:
+  - name: products
+    label: 製品情報
+    label_singular: 製品
+    folder: src/data/products
+    format: json
+    create: false
+    identifier_field: code
+    slug: "{{fields.code | downcase}}"
+    fields:
+      - { label: "製品コード", name: code, widget: string }
+      - { label: "製品名", name: name, widget: string }
+      - { label: "カテゴリ（用途）", name: category, widget: string }
+      - { label: "製品説明文", name: description, widget: text }
+      - name: uses
+        label: "使用用途（箇条書き）"
+        widget: list
+        field: { label: 用途, name: use, widget: string }
+      - { label: "製品画像パス", name: image, widget: string, hint: "例: /images/product-yh880-1.svg" }
+
+  - name: features
+    label: 製品の特長
+    files:
+      - name: features
+        label: "9つの特長"
+        file: src/data/features.json
+        fields:
+          - name: features
+            label: 特長一覧
+            widget: list
+            fields:
+              - { label: "アイコン名", name: icon, widget: string, hint: "flame-off / droplet / coins / shield-check / shield / leaf / thermometer / repeat / layers" }
+              - { label: "特長名", name: title, widget: string }
+              - { label: "数値・実績（サブタイトル）", name: stat, widget: string, required: false }
+              - { label: "説明文", name: description, widget: text }
+              - { label: "注記（※から始まる補足）", name: note, widget: string, required: false }

@@ -1,0 +1,128 @@
+---
+const badges = [
+  { label: 'RoHS適合', desc: 'EU RoHS指令に適合' },
+  { label: 'VOC不使用', desc: '揮発性有機化合物を含まない処方' },
+  { label: '引火点なし', desc: '危険物規制の対象外' },
+  { label: '生分解性', desc: '環境負荷の低減に配慮' },
+];
+---
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-copy fade-in">
+      <p class="hero-eyebrow">環境配慮型 水系洗浄剤 YH880シリーズ</p>
+      <h1 class="hero-title">石油系溶剤に、もう頼らない。<br />水系という、次の標準へ。</h1>
+      <p class="hero-sub">
+        引火性のない水系処方で、金属・機械設備の脱脂洗浄を安全かつ高い効率で実現します。
+        環境規制と労働安全衛生への配慮を両立させたい現場に向けた洗浄剤です。
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">製品を見る</a>
+        <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+      </div>
+      <ul class="hero-badges">
+        {badges.map((b) => (
+          <li>
+            <span class="badge-label">{b.label}</span>
+            <span class="badge-desc">{b.desc}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="hero-media fade-in">
+      <img src="/images/hero-placeholder.svg" alt="YH880シリーズ 使用イメージ" width="1200" height="900" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .hero-eyebrow {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 6.2vw, 2.1rem);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    color: var(--color-text-sub);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 46em;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-badges {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hero-badges li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .badge-label {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+  }
+
+  .badge-desc {
+    font-size: 0.78rem;
+    color: var(--color-text-sub);
+  }
+
+  .hero-media img {
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      padding: 5rem 0 6rem;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+    }
+
+    .hero-badges {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

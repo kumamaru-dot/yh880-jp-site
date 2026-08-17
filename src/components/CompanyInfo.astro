@@ -1,0 +1,217 @@
+---
+// TODO: 販売元情報は正式決定後に差し替えてください（【要確認】箇所）
+const distributor = [
+  { label: '会社名', value: 'JMMT Junmoremedia CO., LTD.' },
+  { label: '所在地', value: '【要確認：所在地を記入】' },
+  { label: '電話番号', value: '【要確認：電話番号を記入】' },
+  { label: 'メールアドレス', value: '【要確認：問い合わせ用メールアドレスを記入】' },
+  { label: '事業内容', value: '【要確認：事業内容を記入】' },
+];
+
+const manufacturer = [
+  { label: '会社名', value: '四川咏輝環境保護科技有限公司' },
+  { label: '所在地', value: '中国 四川省【要確認：詳細住所】' },
+  { label: '事業内容', value: '環境配慮型高機能洗浄剤の研究開発・製造' },
+];
+---
+
+<section class="section section-alt" id="company">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">会社情報</p>
+      <h2 class="section-title">開発メーカーと日本国内販売元</h2>
+      <p class="section-lead">
+        中国の開発メーカーと、日本国内での販売・技術サポートを担う当社の二社体制でご提供します。
+      </p>
+    </div>
+
+    <div class="structure fade-in">
+      <div class="structure-item">
+        <p class="structure-role">開発・製造</p>
+        <p class="structure-name">四川咏輝環境保護科技有限公司</p>
+        <p class="structure-desc">製品開発・製造・技術資料の提供</p>
+      </div>
+      <div class="structure-arrow" aria-hidden="true">→</div>
+      <div class="structure-item structure-item-highlight">
+        <p class="structure-role">日本国内 販売元</p>
+        <p class="structure-name">JMMT Junmoremedia CO., LTD.<span class="tbc">（要確認）</span></p>
+        <p class="structure-desc">日本市場での販売・技術サポート・お問い合わせ対応</p>
+      </div>
+    </div>
+
+    <div class="company-grid">
+      <div class="company-card fade-in">
+        <h3>メーカー情報</h3>
+        <div class="founder">
+          <img src="/images/founder-placeholder.svg" alt="研究開発責任者 何法 博士" width="320" height="320" loading="lazy" />
+          <div class="founder-text">
+            <p class="founder-name">研究開発責任者　何法 博士</p>
+            <p class="founder-desc">
+              北京大学 物理学博士。中国 工業情報化省の技術専門家として、2020年より環境配慮型高機能洗浄剤の国産化に取り組んでいます。
+            </p>
+          </div>
+        </div>
+        <dl class="company-dl">
+          {manufacturer.map((row) => (
+            <>
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
+            </>
+          ))}
+        </dl>
+      </div>
+
+      <div class="company-card fade-in">
+        <h3>販売元情報</h3>
+        <p class="distributor-lead">
+          日本国内における製品の販売、技術サポート、サンプル対応、資料提供は当社が担当いたします。
+          商社・販売店・工場のいずれのお立場でもご相談を承ります。
+        </p>
+        <dl class="company-dl">
+          {distributor.map((row) => (
+            <>
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
+            </>
+          ))}
+        </dl>
+        <p class="note">※【要確認】と記載の項目は、正式な情報に差し替えが必要です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .structure {
+    display: grid;
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 3rem;
+  }
+
+  .structure-item {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+
+  .structure-item-highlight {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+  }
+
+  .structure-role {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .structure-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .tbc {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-sub);
+    margin-left: 0.3rem;
+  }
+
+  .structure-desc {
+    font-size: 0.82rem;
+    color: var(--color-text-sub);
+  }
+
+  .structure-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    transform: rotate(90deg);
+  }
+
+  .company-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .company-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1.75rem;
+  }
+
+  .company-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .founder {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .founder img {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 3px;
+  }
+
+  .founder-name {
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .founder-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-sub);
+  }
+
+  .distributor-lead {
+    font-size: 0.88rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1.75rem;
+  }
+
+  .company-dl {
+    margin: 0 0 1rem;
+    display: grid;
+    grid-template-columns: 7em 1fr;
+    gap: 0.7rem 1rem;
+    font-size: 0.87rem;
+  }
+
+  .company-dl dt {
+    color: var(--color-text-sub);
+    font-size: 0.82rem;
+  }
+
+  .company-dl dd {
+    margin: 0;
+  }
+
+  @media (min-width: 900px) {
+    .structure {
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    .structure-arrow {
+      transform: none;
+    }
+
+    .company-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

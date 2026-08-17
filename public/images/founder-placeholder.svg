@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <rect width="320" height="320" fill="#E6EDE9"/>
+  <rect x="1" y="1" width="318" height="318" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="160" y="150" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">何法 博士</text>
+  <text x="160" y="186" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">研究開発責任者</text>
+</svg>

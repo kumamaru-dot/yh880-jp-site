@@ -1,0 +1,179 @@
+---
+const solutions = [
+  {
+    title: 'スマート洗浄ライン',
+    image: '/images/smart-line-placeholder.svg',
+    body: '超音波加温浸漬・高圧ウォータージェット・熱風乾燥を組み合わせた全自動洗浄ラインです。洗浄から乾燥までを一貫して処理し、大量処理と品質の安定化に対応します。',
+    points: ['超音波加温浸漬', '高圧ウォータージェット', '熱風乾燥', '全自動搬送'],
+  },
+  {
+    title: '手作業洗浄ソリューション',
+    image: '/images/manual-line-placeholder.svg',
+    body: '既存の小型設備との組み合わせを前提としたソリューションです。超音波・高温高圧蒸気を併用することで、手作業のみの場合と比べて洗浄効率の向上が期待できます。',
+    points: ['小型設備との併用', '超音波洗浄機の活用', '高温高圧蒸気の併用', '効率3〜5倍（※）'],
+  },
+];
+
+const timeTable = [
+  { condition: '5℃（低温環境）', time: '約6分' },
+  { condition: '常温', time: '約4分' },
+  { condition: '70℃（加温）', time: '約2分' },
+  { condition: '130℃（設備補助あり）', time: '約1分' },
+];
+---
+
+<section class="section section-alt" id="solutions">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">ソリューション</p>
+      <h2 class="section-title">洗浄剤単体ではなく、洗浄プロセスの提案</h2>
+      <p class="section-lead">
+        設備の規模や処理量に応じて、自動化ラインから既存設備との組み合わせまでご相談いただけます。
+      </p>
+    </div>
+
+    <div class="solution-grid">
+      {solutions.map((s) => (
+        <article class="solution-card fade-in">
+          <img src={s.image} alt={s.title} width="600" height="400" loading="lazy" />
+          <div class="solution-body">
+            <h3>{s.title}</h3>
+            <p class="solution-desc">{s.body}</p>
+            <ul class="solution-points">
+              {s.points.map((p) => <li>{p}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="time-table-block fade-in">
+      <h3>洗浄時間の目安</h3>
+      <div class="time-table-scroll">
+        <table class="time-table">
+          <thead>
+            <tr>
+              <th scope="col">洗浄条件</th>
+              <th scope="col">所要時間の目安</th>
+            </tr>
+          </thead>
+          <tbody>
+            {timeTable.map((row) => (
+              <tr>
+                <th scope="row">{row.condition}</th>
+                <td>{row.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        ※同等の油汚れ条件下における実測参考値です。汚れの種類・量、部品形状、設備条件により所要時間は変動します。
+        「効率3〜5倍」は手作業のみの場合との自社比較による参考値です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .solution-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .solution-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .solution-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .solution-body {
+    padding: 1.75rem;
+  }
+
+  .solution-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .solution-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1.25rem;
+  }
+
+  .solution-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .solution-points li {
+    font-size: 0.78rem;
+    color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+    padding: 0.25rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  .time-table-block {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1.75rem;
+    max-width: 620px;
+  }
+
+  .time-table-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .time-table-scroll {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+
+  .time-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 320px;
+  }
+
+  .time-table th,
+  .time-table td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .time-table thead th {
+    font-size: 0.78rem;
+    color: var(--color-text-sub);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .time-table tbody td {
+    font-weight: 700;
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
+
+  @media (min-width: 900px) {
+    .solution-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

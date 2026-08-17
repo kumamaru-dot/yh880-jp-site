@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const siteUrl = Astro.site?.toString() ?? 'https://example.com';
+const ogImage = new URL('/images/ogp-placeholder.svg', siteUrl).toString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'JMMT Junmoremedia CO., LTD.', // TODO: 正式な販売元社名に差し替え【要確認】
+  url: siteUrl,
+  logo: new URL('/images/logo-placeholder.svg', siteUrl).toString(),
+  description:
+    '四川咏輝環境保護科技有限公司製 環境配慮型水系洗浄剤「YH880シリーズ」の日本国内正規販売元',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '【要確認：住所を記入】',
+    addressLocality: '【要確認：市区町村】',
+    addressRegion: '【要確認：都道府県】',
+    postalCode: '【要確認】',
+    addressCountry: 'JP',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    telephone: '【要確認：電話番号】',
+    email: '【要確認：問い合わせ用メールアドレス】',
+  },
+};
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={siteUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="YH880シリーズ 環境配慮型水系洗浄剤" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+    <script src="../scripts/fade-in.ts"></script>
+  </body>
+</html>

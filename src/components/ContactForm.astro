@@ -1,0 +1,300 @@
+---
+const industries = ['商社', '販売店', '工場・製造業', 'その他'];
+const inquiryTypes = [
+  'サンプルのご希望',
+  'お見積り',
+  '代理店・お取扱いのご相談',
+  '技術資料のご請求',
+  'その他',
+];
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">お問い合わせ</p>
+      <h2 class="section-title">サンプル・見積・お取扱いのご相談</h2>
+      <p class="section-lead">
+        製品仕様のご確認からサンプルのご希望、お取扱いのご相談まで、下記フォームよりお気軽にご連絡ください。
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <aside class="contact-side fade-in">
+        <div class="side-block">
+          <h3>お立場に応じたご相談</h3>
+          <ul class="side-list">
+            <li>
+              <span class="side-label">商社の方</span>
+              取扱商材としてのご検討、供給体制・価格条件のご相談
+            </li>
+            <li>
+              <span class="side-label">販売店の方</span>
+              販売条件、販促資料・サンプルのご提供についてのご相談
+            </li>
+            <li>
+              <span class="side-label">工場・製造業の方</span>
+              現場の汚れ・素材条件に応じた製品選定、試験導入のご相談
+            </li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h3>資料ダウンロード</h3>
+          <p class="side-note">
+            製品カタログ（PDF）は現在準備中です。公開までの間は、フォームより「技術資料のご請求」を選択のうえご連絡ください。
+          </p>
+          {/* TODO: PDF公開時に href を /documents/yh880-catalog.pdf に差し替え、aria-disabled を削除 */}
+          <a href="#contact" class="btn btn-secondary side-btn" aria-disabled="true">
+            製品カタログ（準備中）
+          </a>
+        </div>
+      </aside>
+
+      <div class="contact-form-wrap fade-in">
+        <!--
+          TODO: フォーム送信先の設定
+          送信先が決まり次第、下記 form の action にエンドポイントURLを設定してください。
+          例) <form action="https://example.com/api/contact" method="POST">
+          詳細な設定手順は README.md の「問い合わせフォームの送信先設定」を参照してください。
+        -->
+        <form class="contact-form" action="#" method="POST">
+          <div class="field">
+            <label for="company">会社名<span class="required">必須</span></label>
+            <input type="text" id="company" name="company" required autocomplete="organization" />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="department">部署・役職</label>
+              <input type="text" id="department" name="department" autocomplete="organization-title" />
+            </div>
+            <div class="field">
+              <label for="name">お名前<span class="required">必須</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">メールアドレス<span class="required">必須</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="tel">電話番号</label>
+              <input type="tel" id="tel" name="tel" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="industry">業種<span class="required">必須</span></label>
+            <select id="industry" name="industry" required>
+              <option value="">選択してください</option>
+              {industries.map((i) => <option value={i}>{i}</option>)}
+            </select>
+          </div>
+
+          <fieldset class="field fieldset">
+            <legend>お問い合わせ種別<span class="required">必須</span></legend>
+            <div class="checkbox-grid">
+              {inquiryTypes.map((type, index) => (
+                <label class="checkbox-label">
+                  <input type="checkbox" name="inquiryType" value={type} id={`inquiry-${index}`} />
+                  <span>{type}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+            <textarea id="message" name="message" rows="6" required
+              placeholder="洗浄対象の素材、汚れの種類、現在ご使用中の洗浄剤などをご記載いただくと、より具体的なご提案が可能です。"></textarea>
+          </div>
+
+          <p class="note form-note">
+            ご記入いただいた情報は、お問い合わせへの回答および関連するご案内のみに使用いたします。
+            {/* TODO: プライバシーポリシーページ公開後にリンクを設定 */}
+          </p>
+
+          <button type="submit" class="btn btn-primary submit-btn">送信する</button>
+          <p class="note">※現在フォームの送信先設定が未完了です。公開前に送信テストを実施してください。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-layout {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .side-block {
+    background-color: var(--color-bg-soft);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .side-block h3 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .side-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .side-list li {
+    font-size: 0.85rem;
+    color: var(--color-text-sub);
+    line-height: 1.8;
+  }
+
+  .side-label {
+    display: block;
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 0.88rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .side-note {
+    font-size: 0.85rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1.25rem;
+  }
+
+  .side-btn {
+    width: 100%;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .field-row {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .contact-form label,
+  .fieldset legend {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .required {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: var(--color-accent);
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+    vertical-align: 0.1em;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 0.92rem;
+    color: var(--color-text);
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    background-color: #ffffff;
+    width: 100%;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -1px;
+    border-color: var(--color-accent);
+  }
+
+  textarea {
+    resize: vertical;
+    line-height: 1.8;
+  }
+
+  .fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fieldset legend {
+    padding: 0;
+    margin-bottom: 0.85rem;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  .checkbox-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+  }
+
+  .form-note {
+    margin-top: -0.5rem;
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+    min-width: 200px;
+  }
+
+  @media (min-width: 700px) {
+    .field-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .checkbox-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .contact-layout {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3.5rem;
+    }
+  }
+</style>

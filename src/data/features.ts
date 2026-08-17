@@ -1,0 +1,75 @@
+export interface Feature {
+  icon: string;
+  title: string;
+  stat?: string;
+  description: string;
+  note?: string;
+}
+
+export const features: Feature[] = [
+  {
+    icon: 'flame-off',
+    title: '安全性',
+    stat: '引火点なし',
+    description:
+      '引火点・爆発リスクがなく、燃焼温度は2,000℃以上。輸送・保管・使用のあらゆる場面で安全に取り扱えます。',
+  },
+  {
+    icon: 'droplet',
+    title: '高効率',
+    stat: '洗浄効率 91〜99%',
+    description:
+      '軽質油はスプレー後すぐに拭き取り可能。重質油も約10秒で浸透し、汚れを剥離・分散させます。',
+    note: '※自社試験による参考値。汚れの種類・条件により結果は異なります。',
+  },
+  {
+    icon: 'coins',
+    title: '経済性',
+    stat: '1トンで10〜20トン以上相当',
+    description:
+      'ガソリン・軽油による洗浄と比較し、少量で高い洗浄能力を発揮。噴霧・希釈・循環洗浄など運用方法も柔軟です。',
+    note: '※希釈率・使用条件による社内試算値です。',
+  },
+  {
+    icon: 'shield-check',
+    title: '労働衛生',
+    stat: '無色・低刺激',
+    description:
+      '無色でほとんど臭いがなく、皮膚に触れても刺激が少ない処方です。加温・高圧洗浄時も不快な臭気が生じにくいのが特長です。',
+  },
+  {
+    icon: 'shield',
+    title: '非腐食性',
+    stat: '24時間浸漬でも腐食なし',
+    description:
+      '鉄・銅・鋼・アルミ・各種合金を24時間浸漬しても腐食が見られません。水素脆化を起こさず、ゴム・樹脂も劣化しにくい設計です。',
+  },
+  {
+    icon: 'leaf',
+    title: '環境対応',
+    stat: '有害重金属不使用',
+    description:
+      '鉛・カドミウム・水銀・六価クロム・ヒ素を使用せず、EU RoHS指令に適合。生分解性にも優れています。',
+  },
+  {
+    icon: 'thermometer',
+    title: '安定性',
+    stat: '-8℃〜135℃で安定',
+    description:
+      '凝固点-8℃、100℃まで加熱しても曇点が生じず、蒸気化した状態でも135℃まで対応。沈殿・析出・相分離が起きにくい処方です。',
+  },
+  {
+    icon: 'repeat',
+    title: '代替性',
+    stat: '溶剤系・強アルカリ系の代替',
+    description:
+      'ガソリン・軽油・灯油、有機溶剤系、そして腐食性の強い強アルカリ性水系洗浄剤の代替として使用できます。',
+  },
+  {
+    icon: 'layers',
+    title: '互換性',
+    stat: '主要グリースに対応',
+    description:
+      'リチウム系・カルシウム系・ウレア系など、各種鉱物油脂類との組み合わせに対応します。',
+  },
+];

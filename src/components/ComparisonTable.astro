@@ -1,0 +1,138 @@
+---
+import { comparisonTable } from '../data/comparisonTable';
+---
+
+<section class="section section-alt" id="comparison">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">比較データ</p>
+      <h2 class="section-title">従来品・既存水系品との比較</h2>
+      <p class="section-lead">
+        安全性・素材への影響・環境性・コストの観点から、代表的な洗浄剤カテゴリと比較しました。
+      </p>
+    </div>
+
+    <div class="table-wrap fade-in">
+      <p class="scroll-hint">← 横にスクロールしてご覧いただけます →</p>
+      <div class="table-scroll">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th scope="col" class="col-item">比較項目</th>
+              <th scope="col">ガソリン・軽油・灯油</th>
+              <th scope="col">国内一般ブランド（水系）</th>
+              <th scope="col">国際ブランド（水系）</th>
+              <th scope="col" class="col-highlight">咏輝 水系洗浄剤</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonTable.map((row) => (
+              <tr>
+                <th scope="row" class="col-item">{row.item}</th>
+                <td>{row.petroleum}</td>
+                <td>{row.domestic}</td>
+                <td>{row.international}</td>
+                <td class="col-highlight">{row.yonghui}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="note table-note">
+      ※本表はメーカー提供資料および自社試験に基づく比較参考情報です。「国内一般ブランド」「国際ブランド」は一般的な製品群の傾向を示したもので、特定製品の性能を保証・断定するものではありません。実際の性能は製品・条件により異なります。
+    </p>
+  </div>
+</section>
+
+<style>
+  .table-wrap {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .scroll-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-sub);
+    text-align: center;
+    padding: 0.75rem 1rem 0;
+    margin: 0;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .comparison {
+    width: 100%;
+    min-width: 860px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  .comparison th,
+  .comparison td {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .comparison thead th {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-sub);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  .comparison tbody th {
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .comparison tbody td {
+    color: var(--color-text-sub);
+  }
+
+  .col-item {
+    background-color: var(--color-bg-soft);
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .comparison thead .col-item {
+    background-color: var(--color-bg-soft);
+  }
+
+  .col-highlight {
+    background-color: var(--color-accent-soft);
+  }
+
+  .comparison thead .col-highlight {
+    color: var(--color-accent);
+    font-size: 0.88rem;
+  }
+
+  .comparison tbody td.col-highlight {
+    color: var(--color-accent-dark);
+    font-weight: 700;
+  }
+
+  .table-note {
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .scroll-hint {
+      display: none;
+    }
+  }
+</style>

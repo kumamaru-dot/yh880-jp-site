@@ -1,0 +1,132 @@
+---
+const productModules = import.meta.glob('../data/products/*.json', { eager: true });
+const products = (Object.values(productModules) as Array<{
+  code: string; name: string; category: string;
+  description: string; uses: string[]; image: string;
+}>).sort((a, b) => a.code.localeCompare(b.code));
+---
+
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">製品ラインナップ</p>
+      <h2 class="section-title">YH880シリーズ</h2>
+      <p class="section-lead">
+        用途特性に合わせて3つのグレードを用意しています。現場の汚れの種類・素材・設備条件に応じて選定いただけます。
+      </p>
+    </div>
+    <div class="product-grid">
+      {products.map((product) => (
+        <article class="product-card fade-in">
+          <img src={product.image} alt={`${product.code} ${product.name}`} width="600" height="450" loading="lazy" />
+          <div class="product-body">
+            <p class="product-code">{product.code}</p>
+            <h3 class="product-name">{product.name}</h3>
+            <p class="product-category">{product.category}</p>
+            <p class="product-desc">{product.description}</p>
+            <ul class="product-uses">
+              {product.uses.map((use) => <li>{use}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="note lineup-note">
+      ※各グレードの詳細仕様・技術資料はお問い合わせフォームよりご請求いただけます。
+    </p>
+  </div>
+</section>
+
+<style>
+  .product-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .product-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-code {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .product-category {
+    font-size: 0.8rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1rem;
+  }
+
+  .product-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1.25rem;
+  }
+
+  .product-uses {
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: auto;
+  }
+
+  .product-uses li {
+    font-size: 0.85rem;
+    padding-left: 1.1rem;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .product-uses li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .lineup-note {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

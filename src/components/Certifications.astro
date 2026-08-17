@@ -1,0 +1,157 @@
+---
+const testItems = [
+  { item: '外観・色', result: '無色（透明）' },
+  { item: '臭気', result: 'ほぼ無臭' },
+  { item: '皮膚刺激性', result: '刺激が少ない' },
+  { item: 'pH', result: '中性域' },
+  { item: '曇点', result: '100℃加熱時に曇点なし' },
+  { item: '引火点', result: '引火点なし' },
+  { item: '有害重金属', result: '鉛・カドミウム・水銀・六価クロム・ヒ素 不検出' },
+  { item: 'VOC', result: '揮発性有機化合物 不使用' },
+  { item: '洗浄効率', result: '91〜99%（条件により変動）' },
+];
+
+const certificates = [
+  { image: '/images/certificate-1.svg', label: '第三者試験機関 試験報告書（1）' },
+  { image: '/images/certificate-2.svg', label: '第三者試験機関 試験報告書（2）' },
+  { image: '/images/certificate-3.svg', label: '試験機関 認定資格証明' },
+  { image: '/images/certificate-4.svg', label: 'EU RoHS適合証明' },
+];
+---
+
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">認証・試験報告</p>
+      <h2 class="section-title">第三者試験機関による検証結果</h2>
+      <p class="section-lead">
+        性能値・安全性については、認定を受けた第三者試験機関による試験報告を取得しています。
+      </p>
+    </div>
+
+    <div class="cert-layout">
+      <div class="test-table-block fade-in">
+        <h3>主な試験項目と結果</h3>
+        <div class="test-table-scroll">
+          <table class="test-table">
+            <thead>
+              <tr>
+                <th scope="col">試験項目</th>
+                <th scope="col">結果</th>
+              </tr>
+            </thead>
+            <tbody>
+              {testItems.map((row) => (
+                <tr>
+                  <th scope="row">{row.item}</th>
+                  <td>{row.result}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          ※上記は試験報告書の記載内容を要約したものです。試験条件・測定方法を含む正式な報告書は、お問い合わせいただいた企業様に提示いたします。
+        </p>
+      </div>
+
+      <div class="cert-gallery-block fade-in">
+        <h3>証明書ギャラリー</h3>
+        <div class="cert-gallery">
+          {certificates.map((c) => (
+            <figure class="cert-item">
+              <img src={c.image} alt={c.label} width="420" height="560" loading="lazy" />
+              <figcaption>{c.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="note">※画像は差し替え用のプレースホルダーです。実物画像を掲載予定です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cert-layout {
+    display: grid;
+    gap: 3rem;
+  }
+
+  .test-table-block h3,
+  .cert-gallery-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .test-table-scroll {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+
+  .test-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.87rem;
+    min-width: 340px;
+  }
+
+  .test-table th,
+  .test-table td {
+    text-align: left;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    line-height: 1.7;
+  }
+
+  .test-table thead th {
+    font-size: 0.78rem;
+    color: var(--color-text-sub);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .test-table tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .test-table tbody td {
+    color: var(--color-accent-dark);
+    font-weight: 500;
+  }
+
+  .cert-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-item {
+    margin: 0;
+  }
+
+  .cert-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+  }
+
+  .cert-item figcaption {
+    font-size: 0.75rem;
+    color: var(--color-text-sub);
+    margin-top: 0.5rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 900px) {
+    .cert-layout {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .cert-gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

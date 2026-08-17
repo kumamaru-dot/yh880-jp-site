@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#E6EDE9"/>
+  <rect x="1" y="1" width="598" height="448" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="300" y="215" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">YH880-2</text>
+  <text x="300" y="251" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">工業用 製品画像</text>
+</svg>

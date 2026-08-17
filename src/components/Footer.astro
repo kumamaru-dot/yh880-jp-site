@@ -1,0 +1,80 @@
+---
+const currentYear = 2026; // TODO: 実運用時は自動生成または最新年に更新
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">YH880シリーズ</p>
+      <p class="footer-desc">
+        環境配慮型水系洗浄剤 YH880シリーズ 日本国内正規販売元<br />
+        JMMT Junmoremedia CO., LTD.（仮称・要確認）
+      </p>
+    </div>
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="#products">製品</a>
+      <a href="#features">選ばれる理由</a>
+      <a href="#comparison">比較データ</a>
+      <a href="#cases">導入事例</a>
+      <a href="#company">会社情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {currentYear} JMMT Junmoremedia CO., LTD.（仮称・要確認） / 四川咏輝環境保護科技有限公司</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-accent-dark);
+    color: rgba(255, 255, 255, 0.88);
+    padding: 3.5rem 0 1.5rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 360px;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    align-content: flex-start;
+  }
+
+  .footer-nav a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .footer-nav a:hover {
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+</style>

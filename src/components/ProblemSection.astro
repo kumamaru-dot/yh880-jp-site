@@ -1,0 +1,71 @@
+---
+const points = [
+  {
+    title: '溶剤系洗浄剤の安全リスク',
+    body: 'ガソリン・軽油・灯油・アルコール類・炭化水素系溶剤は引火性が高く、保管・輸送・使用のすべての工程で防爆対策や換気設備など厳格な安全管理が求められます。',
+  },
+  {
+    title: '中国における危険化学品指定',
+    body: '2022年10月、中国の10省庁が軽油を「危険化学品」として指定しました。洗浄剤としての軽油利用に対する規制が強まり、安全性・洗浄効率・労働安全衛生の両立が業界共通の課題となっています。',
+  },
+  {
+    title: 'VOC（揮発性有機化合物）のリスク',
+    body: '溶剤系洗浄剤の多くはVOCを含み、作業者の健康影響や大気環境への負荷が懸念されています。労働安全衛生・環境対応の観点から、VOCを含まない洗浄剤への切り替えニーズが高まっています。',
+  },
+  {
+    title: '既存の水系洗浄剤の弱点',
+    body: '一方で、従来から普及している強アルカリ性の水系洗浄剤は腐食性が強く、金属部品や設備を劣化させるリスクがあります。「安全だが素材を傷める」という新たな課題も生まれています。',
+  },
+];
+---
+
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="section-eyebrow">市場背景</p>
+      <h2 class="section-title">洗浄剤選びが、現場の安全とコストを左右する</h2>
+      <p class="section-lead">
+        溶剤系洗浄剤にも、従来型の水系洗浄剤にも、それぞれ現場を悩ませる課題があります。
+      </p>
+    </div>
+    <div class="problem-grid">
+      {points.map((p) => (
+        <div class="problem-card fade-in">
+          <h3>{p.title}</h3>
+          <p>{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .problem-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .problem-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1.75rem;
+  }
+
+  .problem-card h3 {
+    font-size: 1.05rem;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .problem-card p {
+    font-size: 0.92rem;
+    color: var(--color-text-sub);
+  }
+
+  @media (min-width: 900px) {
+    .problem-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

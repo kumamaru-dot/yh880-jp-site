@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560">
+  <rect width="420" height="560" fill="#E6EDE9"/>
+  <rect x="1" y="1" width="418" height="558" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="210" y="270" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">RoHS適合証明</text>
+  <text x="210" y="306" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">証明書</text>
+</svg>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import ProductLineup from '../components/ProductLineup.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import Solutions from '../components/Solutions.astro';
+import Certifications from '../components/Certifications.astro';
+import CompanyInfo from '../components/CompanyInfo.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'YH880シリーズ｜環境配慮型 水系洗浄剤（金属・工業・機械設備用）';
+const description =
+  '引火点のない水系処方で金属・機械設備の脱脂洗浄に対応する環境配慮型洗浄剤「YH880シリーズ」。EU RoHS適合、VOC不使用、有害重金属不使用。溶剤系洗浄剤からの切り替えをご検討の商社・販売店・工場の皆様へ。';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <ProblemSection />
+    <ProductLineup />
+    <FeatureGrid />
+    <ComparisonTable />
+    <CaseStudies />
+    <Solutions />
+    <Certifications />
+    <CompanyInfo />
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>
