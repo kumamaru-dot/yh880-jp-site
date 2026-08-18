@@ -1,6 +1,97 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#2E2E2E"/>
-  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="10 8"/>
-  <text x="400" y="215" font-family="sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle">▶</text>
-  <text x="400" y="251" font-family="sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">現場動画 埋め込み枠</text>
+  <defs>
+    <linearGradient id="bg-v" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1a2535"/>
+    </linearGradient>
+    <linearGradient id="wash-scene" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e2535"/>
+      <stop offset="100%" stop-color="#243246"/>
+    </linearGradient>
+    <radialGradient id="play-btn" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#15803d" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="btn-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#22c55e" flood-opacity="0.3"/>
+    </filter>
+    <pattern id="vid-grid" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50,0 L0,0 L0,50" stroke="#1e2d40" stroke-width="0.8" fill="none"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-v)"/>
+  <rect width="800" height="450" fill="url(#vid-grid)" opacity="0.2"/>
+
+  <!-- Cinematic scene: industrial cleaning in action -->
+  <!-- Background factory elements -->
+  <!-- Left: Large pipe/machinery silhouette -->
+  <rect x="30" y="80" width="120" height="300" rx="8" fill="#1a2535" opacity="0.8"/>
+  <rect x="30" y="130" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="30" y="200" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="30" y="270" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="150" y="200" width="60" height="12" fill="#243246" opacity="0.6"/>
+
+  <!-- Right: Tank and equipment -->
+  <rect x="650" y="100" width="120" height="260" rx="6" fill="#1a2535" opacity="0.8"/>
+  <rect x="650" y="140" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="650" y="210" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="650" y="280" width="120" height="10" fill="#243246" opacity="0.8"/>
+  <rect x="590" y="210" width="60" height="12" fill="#243246" opacity="0.6"/>
+
+  <!-- Center background: factory scene -->
+  <!-- Cleaning tank silhouette -->
+  <rect x="250" y="120" width="300" height="240" rx="6" fill="#1e2d3e" opacity="0.7"/>
+  <rect x="240" y="108" width="320" height="20" rx="4" fill="#243246" opacity="0.7"/>
+  <!-- Liquid in tank -->
+  <clipPath id="vtank"><rect x="260" y="180" width="280" height="172" rx="4"/></clipPath>
+  <rect x="260" y="180" width="280" height="172" fill="#0369a1" opacity="0.4" clip-path="url(#vtank)"/>
+  <rect x="260" y="180" width="280" height="8" fill="#38bdf8" opacity="0.3"/>
+  <!-- Bubbles -->
+  <circle cx="310" cy="260" r="8" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="380" cy="290" r="6" fill="none" stroke="#7dd3fc" stroke-width="1.2" opacity="0.35"/>
+  <circle cx="450" cy="250" r="9" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="490" cy="300" r="5" fill="none" stroke="#7dd3fc" stroke-width="1" opacity="0.35"/>
+
+  <!-- Spray mist -->
+  <ellipse cx="400" cy="160" rx="120" ry="40" fill="#0ea5e9" opacity="0.06"/>
+  <circle cx="310" cy="148" r="4" fill="#7dd3fc" opacity="0.4"/>
+  <circle cx="355" cy="138" r="3" fill="#38bdf8" opacity="0.4"/>
+  <circle cx="400" cy="142" r="5" fill="#7dd3fc" opacity="0.35"/>
+  <circle cx="445" cy="136" r="3.5" fill="#38bdf8" opacity="0.4"/>
+  <circle cx="490" cy="148" r="4" fill="#7dd3fc" opacity="0.4"/>
+
+  <!-- Gear silhouette in tank -->
+  <circle cx="350" cy="260" r="55" fill="#2d3e52" opacity="0.6"/>
+  <circle cx="350" cy="260" r="40" fill="#1e2d3e" opacity="0.6"/>
+  <circle cx="350" cy="260" r="18" fill="#2d3e52" opacity="0.5"/>
+  <circle cx="450" cy="270" r="42" fill="#2d3e52" opacity="0.5"/>
+  <circle cx="450" cy="270" r="28" fill="#1e2d3e" opacity="0.5"/>
+  <circle cx="450" cy="270" r="13" fill="#2d3e52" opacity="0.45"/>
+
+  <!-- Ground floor -->
+  <rect x="0" y="360" width="800" height="90" fill="#111d2e" opacity="0.9"/>
+  <rect x="0" y="360" width="800" height="3" fill="#1b5e43" opacity="0.3"/>
+
+  <!-- === PLAY BUTTON (center) === -->
+  <circle cx="400" cy="210" r="62" fill="black" opacity="0.5"/>
+  <circle cx="400" cy="210" r="56" fill="url(#play-btn)" filter="url(#btn-shadow)"/>
+  <!-- Triangle play icon -->
+  <polygon points="388,186 388,234 432,210" fill="white"/>
+
+  <!-- Video info overlay (bottom) -->
+  <rect x="0" y="380" width="800" height="70" fill="#071812" opacity="0.92"/>
+  <rect x="0" y="380" width="800" height="2" fill="#22c55e" opacity="0.5"/>
+  <text x="400" y="408" font-family="sans-serif" font-size="15" font-weight="700" fill="#4ade80" text-anchor="middle">現場洗浄の様子（動画）</text>
+  <text x="400" y="430" font-family="sans-serif" font-size="11" fill="#86efac" text-anchor="middle">YH880シリーズによる実際の洗浄工程をご覧いただけます（公開準備中）</text>
+  <text x="400" y="446" font-family="sans-serif" font-size="10" fill="#4a6080" text-anchor="middle">Industrial Cleaning Process Video · Coming Soon</text>
+
+  <!-- Recording indicator (top-left) -->
+  <circle cx="36" cy="30" r="8" fill="#ef4444" opacity="0.9"/>
+  <circle cx="36" cy="30" r="4" fill="#ef4444"/>
+  <text x="52" y="35" font-family="monospace" font-size="12" fill="#ef4444" font-weight="700">REC</text>
+
+  <!-- Time stamp (top-right) -->
+  <rect x="700" y="18" width="90" height="24" rx="3" fill="black" opacity="0.6"/>
+  <text x="745" y="34" font-family="monospace" font-size="12" fill="white" text-anchor="middle">00:00:00</text>
 </svg>

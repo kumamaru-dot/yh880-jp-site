@@ -1,6 +1,147 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
-  <rect width="600" height="450" fill="#E6EDE9"/>
-  <rect x="1" y="1" width="598" height="448" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
-  <text x="300" y="215" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">YH880-3</text>
-  <text x="300" y="251" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">機械設備用 製品画像</text>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="gear3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="gear3b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="floor3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e2d3e"/>
+      <stop offset="100%" stop-color="#111d2e"/>
+    </linearGradient>
+    <pattern id="grid3" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40,0 L0,0 L0,40" stroke="#243246" stroke-width="0.8" fill="none"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#bg3)"/>
+  <rect width="600" height="450" fill="url(#grid3)" opacity="0.3"/>
+
+  <!-- Factory floor -->
+  <rect x="0" y="340" width="600" height="110" fill="url(#floor3)"/>
+  <rect x="0" y="340" width="600" height="3" fill="#1b5e43" opacity="0.4"/>
+
+  <!-- Background factory structure -->
+  <rect x="0" y="0" width="600" height="8" fill="#243246"/>
+  <rect x="50" y="8" width="6" height="240" fill="#1e2d3e"/>
+  <rect x="200" y="8" width="6" height="200" fill="#1e2d3e"/>
+  <rect x="400" y="8" width="6" height="220" fill="#1e2d3e"/>
+  <rect x="550" y="8" width="6" height="240" fill="#1e2d3e"/>
+  <rect x="0" y="120" width="600" height="6" fill="#1e2d3e"/>
+
+  <!-- Ship propeller (top-right background) -->
+  <g transform="translate(500, 140)" opacity="0.35">
+    <circle r="55" fill="none" stroke="#475569" stroke-width="2"/>
+    <!-- Blades -->
+    <g><ellipse cx="0" cy="-38" rx="14" ry="28" fill="#374151" transform="rotate(0)"/></g>
+    <g><ellipse cx="0" cy="-38" rx="14" ry="28" fill="#374151" transform="rotate(72)"/></g>
+    <g><ellipse cx="0" cy="-38" rx="14" ry="28" fill="#374151" transform="rotate(144)"/></g>
+    <g><ellipse cx="0" cy="-38" rx="14" ry="28" fill="#374151" transform="rotate(216)"/></g>
+    <g><ellipse cx="0" cy="-38" rx="14" ry="28" fill="#374151" transform="rotate(288)"/></g>
+    <circle r="16" fill="#243246" stroke="#475569" stroke-width="2"/>
+    <circle r="8" fill="#374151"/>
+  </g>
+
+  <!-- Automotive engine block (background center) -->
+  <rect x="180" y="260" width="240" height="80" rx="6" fill="#1e2535" opacity="0.7"/>
+  <rect x="190" y="265" width="50" height="50" rx="3" fill="#243246" opacity="0.7"/>
+  <rect x="250" y="265" width="50" height="50" rx="3" fill="#243246" opacity="0.7"/>
+  <rect x="310" y="265" width="50" height="50" rx="3" fill="#243246" opacity="0.7"/>
+  <rect x="195" y="255" width="30" height="14" rx="3" fill="#2d3e52" opacity="0.8"/>
+  <rect x="255" y="255" width="30" height="14" rx="3" fill="#2d3e52" opacity="0.8"/>
+  <rect x="315" y="255" width="30" height="14" rx="3" fill="#2d3e52" opacity="0.8"/>
+
+  <!-- === LARGE MAIN GEAR (center) === -->
+  <g transform="translate(300, 210)">
+    <circle r="110" fill="url(#gear3)"/>
+    <circle r="110" fill="none" stroke="#64748b" stroke-width="3"/>
+    <!-- Sheen -->
+    <ellipse cx="-30" cy="-35" rx="50" ry="28" fill="white" opacity="0.08" transform="rotate(-25)"/>
+    <!-- Teeth (12 teeth) -->
+    <rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/>
+    <g transform="rotate(30)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(60)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(90)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(120)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(150)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(180)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(210)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(240)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(270)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(300)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <g transform="rotate(330)"><rect x="-10" y="-122" width="20" height="28" rx="4" fill="#475569"/></g>
+    <!-- Spoke details -->
+    <rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/>
+    <g transform="rotate(60)"><rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/></g>
+    <g transform="rotate(120)"><rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/></g>
+    <g transform="rotate(180)"><rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/></g>
+    <g transform="rotate(240)"><rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/></g>
+    <g transform="rotate(300)"><rect x="-6" y="-95" width="12" height="80" rx="4" fill="#3d5470"/></g>
+    <!-- Hub -->
+    <circle r="36" fill="#1e2d40"/>
+    <circle r="28" fill="#111d2e"/>
+    <circle r="14" fill="#243246"/>
+    <circle r="7" fill="#475569"/>
+    <!-- Green ring -->
+    <circle r="110" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Medium gear (left, meshing) -->
+  <g transform="translate(152, 205)">
+    <circle r="54" fill="url(#gear3b)"/>
+    <circle r="54" fill="none" stroke="#64748b" stroke-width="2"/>
+    <rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/>
+    <g transform="rotate(45)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(90)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(135)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(180)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(225)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(270)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <g transform="rotate(315)"><rect x="-7" y="-62" width="14" height="18" rx="3" fill="#64748b"/></g>
+    <circle r="18" fill="#1e2d40"/>
+    <circle r="12" fill="#111d2e"/>
+    <circle r="6" fill="#475569"/>
+  </g>
+
+  <!-- Small gear (top-left) -->
+  <g transform="translate(106, 132)">
+    <circle r="32" fill="url(#gear3b)"/>
+    <rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/>
+    <g transform="rotate(60)"><rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/></g>
+    <g transform="rotate(120)"><rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/></g>
+    <g transform="rotate(180)"><rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/></g>
+    <g transform="rotate(240)"><rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/></g>
+    <g transform="rotate(300)"><rect x="-5" y="-38" width="10" height="14" rx="2" fill="#64748b"/></g>
+    <circle r="10" fill="#1e2d40"/>
+    <circle r="5" fill="#475569"/>
+  </g>
+
+  <!-- Cleaning spray droplets -->
+  <circle cx="440" cy="140" r="5" fill="#7dd3fc" opacity="0.65"/>
+  <circle cx="465" cy="160" r="4" fill="#38bdf8" opacity="0.6"/>
+  <circle cx="455" cy="180" r="6" fill="#7dd3fc" opacity="0.55"/>
+  <circle cx="480" cy="190" r="4" fill="#38bdf8" opacity="0.6"/>
+  <circle cx="430" cy="170" r="3.5" fill="#bae6fd" opacity="0.65"/>
+  <circle cx="490" cy="160" r="3" fill="#bae6fd" opacity="0.55"/>
+
+  <!-- Water spray from right (nozzle) -->
+  <rect x="548" y="185" width="40" height="10" rx="4" fill="#334155"/>
+  <polygon points="548,185 548,195 534,190" fill="#22c55e"/>
+  <circle cx="520" cy="190" r="4" fill="#38bdf8" opacity="0.7"/>
+  <circle cx="500" cy="185" r="3.5" fill="#7dd3fc" opacity="0.65"/>
+  <circle cx="510" cy="200" r="4.5" fill="#38bdf8" opacity="0.6"/>
+  <circle cx="490" cy="210" r="3" fill="#bae6fd" opacity="0.6"/>
+
+  <!-- Label strip -->
+  <rect x="0" y="385" width="600" height="65" fill="#071812" opacity="0.92"/>
+  <rect x="0" y="385" width="600" height="3" fill="#22c55e" opacity="0.6"/>
+  <text x="300" y="413" font-family="sans-serif" font-size="16" font-weight="700" fill="#4ade80" text-anchor="middle">YH880-3 · 機械設備用 環境対応型水系洗浄剤</text>
+  <text x="300" y="435" font-family="sans-serif" font-size="12" fill="#86efac" text-anchor="middle">大型設備・特殊車両向け / Heavy Machinery Grade</text>
 </svg>

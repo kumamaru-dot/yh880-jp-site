@@ -1,6 +1,140 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
-  <rect width="600" height="450" fill="#E6EDE9"/>
-  <rect x="1" y="1" width="598" height="448" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
-  <text x="300" y="215" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">YH880-2</text>
-  <text x="300" y="251" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">工業用 製品画像</text>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b2e"/>
+    </linearGradient>
+    <linearGradient id="pipe-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="oil-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#44200a"/>
+      <stop offset="60%" stop-color="#5c2e0e"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="spray-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.9"/>
+    </linearGradient>
+    <pattern id="dirt2" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#3d1c08"/>
+      <line x1="0" y1="0" x2="12" y2="12" stroke="#5c2e0e" stroke-width="2" opacity="0.5"/>
+      <line x1="12" y1="0" x2="0" y2="12" stroke="#4a2010" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#bg2)"/>
+
+  <!-- Oil derrick silhouette background -->
+  <!-- Tower legs -->
+  <polygon points="290,50 310,50 360,280 240,280" fill="#1a1025" opacity="0.7"/>
+  <line x1="290" y1="50" x2="240" y2="280" stroke="#2d1f3e" stroke-width="2" opacity="0.8"/>
+  <line x1="310" y1="50" x2="360" y2="280" stroke="#2d1f3e" stroke-width="2" opacity="0.8"/>
+  <!-- Crossbars -->
+  <line x1="260" y1="110" x2="340" y2="110" stroke="#2d1f3e" stroke-width="2" opacity="0.6"/>
+  <line x1="252" y1="155" x2="348" y2="155" stroke="#2d1f3e" stroke-width="2" opacity="0.6"/>
+  <line x1="244" y1="200" x2="356" y2="200" stroke="#2d1f3e" stroke-width="2" opacity="0.6"/>
+  <line x1="242" y1="245" x2="358" y2="245" stroke="#2d1f3e" stroke-width="2" opacity="0.6"/>
+  <!-- Crown block -->
+  <rect x="282" y="38" width="36" height="16" rx="3" fill="#2d1f3e" opacity="0.8"/>
+
+  <!-- Ground/platform -->
+  <rect x="0" y="330" width="600" height="120" fill="#1a1025" opacity="0.8"/>
+  <rect x="0" y="330" width="600" height="4" fill="#3d1c08" opacity="0.6"/>
+
+  <!-- Oil barrels (background) -->
+  <rect x="30" y="280" width="50" height="60" rx="6" fill="#374151" opacity="0.7"/>
+  <rect x="30" y="296" width="50" height="8" fill="#4b5563" opacity="0.7"/>
+  <rect x="30" y="320" width="50" height="8" fill="#4b5563" opacity="0.7"/>
+  <rect x="92" y="294" width="50" height="46" rx="6" fill="#374151" opacity="0.7"/>
+  <rect x="92" y="310" width="50" height="8" fill="#4b5563" opacity="0.7"/>
+
+  <!-- === MAIN: LARGE PIPE CROSS-SECTION === -->
+  <!-- Pipe body -->
+  <rect x="60" y="160" width="480" height="120" rx="10" fill="url(#pipe-g)"/>
+  <rect x="60" y="160" width="480" height="120" rx="10" fill="none" stroke="#4b5563" stroke-width="3"/>
+  <!-- Pipe sheen top -->
+  <rect x="70" y="165" width="460" height="14" rx="4" fill="white" opacity="0.06"/>
+
+  <!-- Flanges -->
+  <rect x="52" y="150" width="24" height="140" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2"/>
+  <rect x="524" y="150" width="24" height="140" rx="4" fill="#374151" stroke="#4b5563" stroke-width="2"/>
+
+  <!-- Flange bolts (left) -->
+  <circle cx="58" cy="166" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="58" cy="190" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="58" cy="214" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="58" cy="238" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="58" cy="268" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- Flange bolts (right) -->
+  <circle cx="542" cy="166" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="542" cy="190" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="542" cy="214" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="542" cy="238" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+  <circle cx="542" cy="268" r="5" fill="#1f2937" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- Oil/dirt coating (left half of pipe) -->
+  <clipPath id="pipe-clip"><rect x="60" y="160" width="480" height="120" rx="10"/></clipPath>
+  <rect x="60" y="160" width="260" height="120" fill="url(#dirt2)" clip-path="url(#pipe-clip)"/>
+  <rect x="60" y="160" width="260" height="120" fill="#3d1c08" opacity="0.5" clip-path="url(#pipe-clip)"/>
+
+  <!-- Oil drips -->
+  <path d="M100,280 Q100,300 102,310" stroke="#3d1c08" stroke-width="4" fill="none"/>
+  <ellipse cx="102" cy="312" rx="5" ry="8" fill="#3d1c08"/>
+  <path d="M150,280 Q150,294 152,302" stroke="#44200a" stroke-width="3" fill="none"/>
+  <ellipse cx="152" cy="304" rx="4" ry="6" fill="#44200a"/>
+  <path d="M200,280 Q200,298 202,308" stroke="#3d1c08" stroke-width="4" fill="none"/>
+  <ellipse cx="202" cy="310" rx="5" ry="7" fill="#3d1c08"/>
+  <path d="M240,280 Q240,290 241,296" stroke="#44200a" stroke-width="3" fill="none"/>
+  <ellipse cx="241" cy="298" rx="3" ry="5" fill="#44200a"/>
+
+  <!-- Transition zone dirty→clean -->
+  <rect x="290" y="160" width="40" height="120" fill="url(#oil-g)" clip-path="url(#pipe-clip)"/>
+
+  <!-- Spray system (right side) -->
+  <!-- Spray gun/nozzle -->
+  <rect x="480" y="130" width="60" height="20" rx="4" fill="#374151"/>
+  <rect x="520" y="120" width="8" height="40" rx="3" fill="#4b5563"/>
+  <polygon points="540,138 560,148 540,158" fill="#22c55e"/>
+
+  <!-- Spray fan -->
+  <path d="M540,148 L600,100" stroke="#7dd3fc" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/>
+  <path d="M540,148 L600,148" stroke="#7dd3fc" stroke-width="2" opacity="0.6" stroke-dasharray="4 3"/>
+  <path d="M540,148 L600,196" stroke="#7dd3fc" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/>
+
+  <!-- Water spray droplets over right half -->
+  <circle cx="360" cy="172" r="4" fill="#7dd3fc" opacity="0.7"/>
+  <circle cx="390" cy="185" r="3" fill="#38bdf8" opacity="0.65"/>
+  <circle cx="420" cy="168" r="4.5" fill="#7dd3fc" opacity="0.6"/>
+  <circle cx="450" cy="200" r="3.5" fill="#38bdf8" opacity="0.65"/>
+  <circle cx="480" cy="175" r="4" fill="#7dd3fc" opacity="0.7"/>
+  <circle cx="370" cy="210" r="3" fill="#bae6fd" opacity="0.6"/>
+  <circle cx="410" cy="225" r="4" fill="#7dd3fc" opacity="0.55"/>
+  <circle cx="460" cy="215" r="3.5" fill="#38bdf8" opacity="0.6"/>
+  <circle cx="500" cy="190" r="3" fill="#bae6fd" opacity="0.6"/>
+  <circle cx="345" cy="240" r="3.5" fill="#7dd3fc" opacity="0.55"/>
+  <circle cx="395" cy="252" r="3" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="440" cy="245" r="4" fill="#7dd3fc" opacity="0.55"/>
+
+  <!-- Cleaned right pipe surface -->
+  <rect x="330" y="160" width="210" height="120" fill="#374151" opacity="0.4" clip-path="url(#pipe-clip)"/>
+  <rect x="330" y="162" width="210" height="14" fill="white" opacity="0.06" clip-path="url(#pipe-clip)"/>
+
+  <!-- BEFORE/AFTER labels -->
+  <rect x="72" y="168" width="68" height="22" rx="3" fill="#44200a" opacity="0.85"/>
+  <text x="106" y="184" font-family="sans-serif" font-size="12" font-weight="700" fill="#d97706" text-anchor="middle">洗浄前</text>
+  <rect x="362" y="168" width="68" height="22" rx="3" fill="#064e3b" opacity="0.85"/>
+  <text x="396" y="184" font-family="sans-serif" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">洗浄後</text>
+
+  <!-- Temperature/gauge indicators -->
+  <rect x="490" y="340" width="80" height="50" rx="4" fill="#111827" stroke="#374151" stroke-width="1.5"/>
+  <text x="530" y="358" font-family="monospace" font-size="10" fill="#22c55e" text-anchor="middle">TEMP</text>
+  <text x="530" y="376" font-family="monospace" font-size="14" font-weight="700" fill="#4ade80" text-anchor="middle">42°C</text>
+
+  <!-- Label strip -->
+  <rect x="0" y="385" width="600" height="65" fill="#071812" opacity="0.92"/>
+  <rect x="0" y="385" width="600" height="3" fill="#22c55e" opacity="0.6"/>
+  <text x="300" y="413" font-family="sans-serif" font-size="16" font-weight="700" fill="#4ade80" text-anchor="middle">YH880-2 · 工業用 環境対応型水系洗浄剤</text>
+  <text x="300" y="435" font-family="sans-serif" font-size="12" fill="#86efac" text-anchor="middle">石油・ガス関連設備向け / Oil &amp; Gas Equipment Grade</text>
 </svg>

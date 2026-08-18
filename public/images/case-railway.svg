@@ -1,6 +1,120 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <rect width="600" height="400" fill="#E6EDE9"/>
-  <rect x="1" y="1" width="598" height="398" fill="none" stroke="#1B5E43" stroke-width="2" stroke-dasharray="10 8"/>
-  <text x="300" y="190" font-family="sans-serif" font-size="28" font-weight="700" fill="#1B5E43" text-anchor="middle">鉄道機関車</text>
-  <text x="300" y="226" font-family="sans-serif" font-size="16" fill="#1B5E43" text-anchor="middle">Before / After 画像</text>
+  <defs>
+    <linearGradient id="bg-r" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="70%" stop-color="#111d2e"/>
+      <stop offset="100%" stop-color="#0f1520"/>
+    </linearGradient>
+    <linearGradient id="loco" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bg-r)"/>
+
+  <!-- Maintenance shed ceiling -->
+  <rect x="0" y="0" width="600" height="12" fill="#1a2840"/>
+  <line x1="50" y1="12" x2="50" y2="100" stroke="#1a2840" stroke-width="6"/>
+  <line x1="200" y1="12" x2="200" y2="100" stroke="#1a2840" stroke-width="6"/>
+  <line x1="400" y1="12" x2="400" y2="100" stroke="#1a2840" stroke-width="6"/>
+  <line x1="550" y1="12" x2="550" y2="100" stroke="#1a2840" stroke-width="6"/>
+  <!-- Overhead lights -->
+  <ellipse cx="150" cy="30" rx="30" ry="8" fill="#fbbf24" opacity="0.12"/>
+  <ellipse cx="450" cy="30" rx="30" ry="8" fill="#fbbf24" opacity="0.12"/>
+  <rect x="138" y="10" width="24" height="18" rx="3" fill="#374151"/>
+  <rect x="438" y="10" width="24" height="18" rx="3" fill="#374151"/>
+  <rect x="144" y="28" width="12" height="6" rx="1" fill="#fbbf24" opacity="0.6"/>
+  <rect x="444" y="28" width="12" height="6" rx="1" fill="#fbbf24" opacity="0.6"/>
+
+  <!-- Rails -->
+  <rect x="0" y="300" width="600" height="8" rx="2" fill="#374151"/>
+  <rect x="0" y="318" width="600" height="8" rx="2" fill="#374151"/>
+  <!-- Rail ties -->
+  <rect x="40" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="100" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="160" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="220" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="280" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="340" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="400" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="460" y="298" width="16" height="30" fill="#243246"/>
+  <rect x="520" y="298" width="16" height="30" fill="#243246"/>
+
+  <!-- === LOCOMOTIVE === -->
+  <!-- Main body -->
+  <rect x="60" y="160" width="400" height="130" rx="8" fill="url(#loco)" stroke="#4b5563" stroke-width="2"/>
+  <!-- Body detail stripe -->
+  <rect x="60" y="180" width="400" height="12" fill="#1b5e43" opacity="0.5"/>
+  <!-- Cab (right) -->
+  <rect x="380" y="120" width="100" height="80" rx="6" fill="#2d3e52" stroke="#4b5563" stroke-width="2"/>
+  <!-- Cab windows -->
+  <rect x="392" y="130" width="36" height="28" rx="3" fill="#0c1a28" stroke="#1e3a50" stroke-width="1.5"/>
+  <rect x="438" y="130" width="32" height="28" rx="3" fill="#0c1a28" stroke="#1e3a50" stroke-width="1.5"/>
+  <!-- Cab window light reflection -->
+  <line x1="396" y1="133" x2="399" y2="155" stroke="white" stroke-width="1" opacity="0.07"/>
+  <line x1="442" y1="133" x2="445" y2="155" stroke="white" stroke-width="1" opacity="0.07"/>
+
+  <!-- Front nose -->
+  <rect x="30" y="170" width="40" height="110" rx="6" fill="#374151" stroke="#4b5563" stroke-width="2"/>
+  <rect x="35" y="180" width="30" height="20" rx="2" fill="#1e2535"/>
+  <!-- Headlight -->
+  <circle cx="50" cy="220" r="12" fill="#111d2e" stroke="#4b5563" stroke-width="1.5"/>
+  <circle cx="50" cy="220" r="8" fill="#fbbf24" opacity="0.4"/>
+  <circle cx="50" cy="220" r="4" fill="#fef3c7" opacity="0.3"/>
+
+  <!-- Wheels (bogies) -->
+  <!-- Front bogie -->
+  <circle cx="130" cy="300" r="36" fill="#1a2535" stroke="#4b5563" stroke-width="3"/>
+  <circle cx="130" cy="300" r="28" fill="#111d2e"/>
+  <circle cx="130" cy="300" r="18" fill="#1a2535" stroke="#374151" stroke-width="2"/>
+  <circle cx="130" cy="300" r="8" fill="#374151"/>
+  <!-- Wheel spokes -->
+  <line x1="130" y1="272" x2="130" y2="328" stroke="#374151" stroke-width="2"/>
+  <line x1="102" y1="300" x2="158" y2="300" stroke="#374151" stroke-width="2"/>
+  <line x1="110" y1="280" x2="150" y2="320" stroke="#374151" stroke-width="1.5"/>
+  <line x1="150" y1="280" x2="110" y2="320" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Rear bogie -->
+  <circle cx="360" cy="300" r="36" fill="#1a2535" stroke="#4b5563" stroke-width="3"/>
+  <circle cx="360" cy="300" r="28" fill="#111d2e"/>
+  <circle cx="360" cy="300" r="18" fill="#1a2535" stroke="#374151" stroke-width="2"/>
+  <circle cx="360" cy="300" r="8" fill="#374151"/>
+  <line x1="360" y1="272" x2="360" y2="328" stroke="#374151" stroke-width="2"/>
+  <line x1="332" y1="300" x2="388" y2="300" stroke="#374151" stroke-width="2"/>
+  <line x1="340" y1="280" x2="380" y2="320" stroke="#374151" stroke-width="1.5"/>
+  <line x1="380" y1="280" x2="340" y2="320" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Oil/grease on front wheel -->
+  <circle cx="130" cy="300" r="36" fill="#44200a" opacity="0.45"/>
+
+  <!-- Cleaning worker + spray equipment (right) -->
+  <rect x="490" y="210" width="50" height="90" rx="4" fill="#334155"/>
+  <!-- Spray hose -->
+  <path d="M490,250 Q470,240 450,255 Q430,268 420,280" stroke="#374151" stroke-width="5" fill="none"/>
+  <!-- Spray gun -->
+  <rect x="410" y="274" width="24" height="10" rx="3" fill="#475569"/>
+  <polygon points="410,274 410,284 398,279" fill="#22c55e"/>
+  <!-- Water spray droplets on wheel -->
+  <circle cx="155" cy="278" r="4" fill="#7dd3fc" opacity="0.7"/>
+  <circle cx="140" cy="268" r="3.5" fill="#38bdf8" opacity="0.65"/>
+  <circle cx="160" cy="262" r="3" fill="#7dd3fc" opacity="0.6"/>
+  <circle cx="145" cy="256" r="4" fill="#38bdf8" opacity="0.55"/>
+  <circle cx="168" cy="275" r="2.5" fill="#bae6fd" opacity="0.65"/>
+  <circle cx="130" cy="265" r="3.5" fill="#7dd3fc" opacity="0.6"/>
+  <circle cx="118" cy="272" r="3" fill="#38bdf8" opacity="0.55"/>
+  <!-- Clean side of wheel -->
+  <clipPath id="wclean"><circle cx="130" cy="300" r="36"/></clipPath>
+  <path d="M130,264 A36,36 0 0,1 166,300 L130,300 Z" fill="#374151" opacity="0.6" clip-path="url(#wclean)"/>
+
+  <!-- Steam/vapor from cleaning -->
+  <ellipse cx="150" cy="248" rx="20" ry="10" fill="#e0f2fe" opacity="0.1"/>
+  <ellipse cx="135" cy="238" rx="14" ry="7" fill="#e0f2fe" opacity="0.08"/>
+  <ellipse cx="120" cy="230" rx="10" ry="5" fill="#e0f2fe" opacity="0.06"/>
+
+  <!-- Label strip -->
+  <rect x="0" y="358" width="600" height="42" fill="#071812" opacity="0.9"/>
+  <rect x="0" y="358" width="600" height="2" fill="#22c55e" opacity="0.5"/>
+  <text x="300" y="377" font-family="sans-serif" font-size="13" font-weight="700" fill="#4ade80" text-anchor="middle">鉄道 ｜ 鉄道機関車の駆動部・部品洗浄</text>
+  <text x="300" y="393" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Railway / Locomotive Drivetrain &amp; Parts Cleaning</text>
 </svg>
