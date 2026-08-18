@@ -1,4 +1,5 @@
 ---
+const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
 const solutions = [
   {
     title: 'スマート洗浄ライン',
@@ -35,7 +36,7 @@ const timeTable = [
     <div class="solution-grid">
       {solutions.map((s) => (
         <article class="solution-card fade-in">
-          <img src={s.image} alt={s.title} width="600" height="400" loading="lazy" />
+          <img src={withBase(s.image)} alt={s.title} width="600" height="400" loading="lazy" />
           <div class="solution-body">
             <h3>{s.title}</h3>
             <p class="solution-desc">{s.body}</p>

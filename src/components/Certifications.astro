@@ -11,6 +11,7 @@ const testItems = [
   { item: '洗浄効率', result: '91〜99%（条件により変動）' },
 ];
 
+const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
 const certificates = [
   { image: '/images/certificate-1.svg', label: '第三者試験機関 試験報告書（1）' },
   { image: '/images/certificate-2.svg', label: '第三者試験機関 試験報告書（2）' },
@@ -60,7 +61,7 @@ const certificates = [
         <div class="cert-gallery">
           {certificates.map((c) => (
             <figure class="cert-item">
-              <img src={c.image} alt={c.label} width="420" height="560" loading="lazy" />
+              <img src={withBase(c.image)} alt={c.label} width="420" height="560" loading="lazy" />
               <figcaption>{c.label}</figcaption>
             </figure>
           ))}

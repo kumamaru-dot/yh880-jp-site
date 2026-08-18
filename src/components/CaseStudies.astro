@@ -1,5 +1,6 @@
 ---
 import { caseStudies } from '../data/caseStudies';
+const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
 ---
 
 <section class="section" id="cases">
@@ -16,7 +17,7 @@ import { caseStudies } from '../data/caseStudies';
       {caseStudies.map((item) => (
         <article class="case-card fade-in">
           <div class="case-media">
-            <img src={item.image} alt={item.title} width="600" height="400" loading="lazy" />
+            <img src={withBase(item.image)} alt={item.title} width="600" height="400" loading="lazy" />
             <div class="case-media-labels">
               <span>Before</span>
               <span>After</span>
@@ -35,7 +36,7 @@ import { caseStudies } from '../data/caseStudies';
       <div class="media-block fade-in">
         <h3>現場洗浄の様子（動画）</h3>
         <div class="media-frame">
-          <img src="/images/video-placeholder.svg" alt="現場洗浄動画（準備中）" width="800" height="450" loading="lazy" />
+          <img src={withBase('/images/video-placeholder.svg')} alt="現場洗浄動画（準備中）" width="800" height="450" loading="lazy" />
         </div>
         <p class="note">
           {/* TODO: 動画公開時は下記コメントのiframeに差し替え */}
@@ -53,7 +54,7 @@ import { caseStudies } from '../data/caseStudies';
       <div class="media-block fade-in">
         <h3>ブラインド比較試験</h3>
         <div class="media-frame">
-          <img src="/images/blind-test-placeholder.svg" alt="ブラインド比較試験（準備中）" width="800" height="450" loading="lazy" />
+          <img src={withBase('/images/blind-test-placeholder.svg')} alt="ブラインド比較試験（準備中）" width="800" height="450" loading="lazy" />
         </div>
         <p class="case-desc">
           製品名を伏せた状態で、競合他社品と同一条件下での洗浄性能を比較する試験を実施しています。
