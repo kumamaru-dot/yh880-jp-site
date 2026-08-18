@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YH880 网站编辑操作指南</title>
+  <style>
+    :root {
+      --navy: #1A3A6B;
+      --navy-light: #2B5499;
+      --orange: #E8602C;
+      --bg: #F5F7FB;
+      --surface: #FFFFFF;
+      --text: #1C1F26;
+      --text-sub: #52596B;
+      --border: #DDE2EE;
+      --step-bg: #EEF2FA;
+      --note-bg: #FBE9E1;
+      --tip-bg: #EEF2FA;
+      --code-bg: #EEF2FA;
+      --code-text: #1A3A6B;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827; --surface: #1C2535; --text: #E8ECF4;
+        --text-sub: #8E97AC; --border: #2C3A52; --step-bg: #1E2D47;
+        --note-bg: #2D1A10; --tip-bg: #1A2540; --code-bg: #1A2540;
+        --code-text: #7EAAEE;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei",
+                   "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .doc-header { border-bottom: 2px solid var(--navy); padding-bottom: 28px; margin-bottom: 40px; }
+    .doc-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+    .doc-title { font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 12px; }
+    .doc-lead { font-size: 15px; color: var(--text-sub); line-height: 1.7; }
+    .section { margin-bottom: 44px; }
+    .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-sub); margin-bottom: 6px; }
+    .section-title { font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .step-body { flex: 1; min-width: 0; }
+    .step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .step-desc { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
+    .url-box { display: flex; align-items: center; gap: 10px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; margin-top: 10px; }
+    .url-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-sub); white-space: nowrap; }
+    .url-text { font-family: "Courier New", "Consolas", monospace; font-size: 13px; color: var(--code-text); word-break: break-all; font-weight: 600; }
+    .callout { border-radius: 8px; padding: 14px 18px; margin: 18px 0; border-left: 4px solid; font-size: 14px; line-height: 1.7; }
+    .callout-warn { border-color: var(--orange); background: var(--note-bg); }
+    .callout-info { border-color: var(--navy); background: var(--tip-bg); }
+    .callout-title { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
+    .callout-warn .callout-title { color: var(--orange); }
+    .callout-info .callout-title { color: var(--navy-light); }
+    .flow { display: flex; align-items: center; flex-wrap: wrap; margin: 18px 0; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px; justify-content: center; gap: 0; }
+    .flow-item { text-align: center; padding: 10px 16px; min-width: 110px; }
+    .flow-icon { font-size: 22px; display: block; margin-bottom: 6px; }
+    .flow-label { font-size: 12px; font-weight: 700; color: var(--text); display: block; }
+    .flow-sub { font-size: 11px; color: var(--text-sub); }
+    .flow-arrow { font-size: 18px; color: var(--orange); font-weight: 700; padding: 0 4px; }
+    .field-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; overflow-x: auto; display: block; }
+    .field-table th { background: var(--step-bg); color: var(--text-sub); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .field-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .field-table tr:last-child td { border-bottom: none; }
+    .field-name { font-weight: 700; color: var(--navy-light); white-space: nowrap; }
+    .doc-footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-sub); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <p class="doc-eyebrow">YH880 网站管理 · 操作手册</p>
+    <h1 class="doc-title">网站内容编辑操作指南</h1>
+    <p class="doc-lead">
+      本指南说明如何通过管理后台修改 YH880 产品网站的内容。<br>
+      无需编程知识，使用浏览器即可完成所有操作。
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">准备工作</p>
+    <h2 class="section-title">开始前需要准备的事项</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">注册 GitHub 账号（如已有账号可跳过）</div>
+          <div class="step-desc">
+            请访问 <strong>github.com</strong> 注册一个免费账号。<br>
+            注册完成后，将您的 GitHub 用户名告知管理员（日本负责人），由管理员为您开通编辑权限。
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">确认收到 GitHub 协作者邀请邮件</div>
+          <div class="step-desc">
+            管理员发出邀请后，您注册 GitHub 时使用的邮箱会收到邀请邮件。<br>
+            请点击邮件中的链接，接受邀请。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="callout callout-warn" style="margin-top:18px;">
+      <div class="callout-title">⚠ 网络注意事项</div>
+      GitHub 在中国大陆有时访问较慢或不稳定。如遇无法访问的情况，建议使用 VPN 后再操作。
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">第一步</p>
+    <h2 class="section-title">进入管理后台</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">打开管理后台网址</div>
+          <div class="step-desc">在浏览器地址栏输入以下网址后按回车：</div>
+          <div class="url-box">
+            <span class="url-label">管理后台</span>
+            <span class="url-text">https://musical-druid-7c9548.netlify.app/admin/</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">用 GitHub 账号登录</div>
+          <div class="step-desc">
+            页面会显示 Sveltia CMS 的登录界面，点击「<strong>使用 GitHub 登录</strong>」按钮。<br>
+            弹出的 GitHub 授权页面中，点击「<strong>Authorize</strong>（授权）」即可进入后台。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="callout callout-info">
+      <div class="callout-title">ℹ 登录后的界面说明</div>
+      左侧菜单有两个栏目：<strong>「产品信息」</strong>（製品情報）和<strong>「产品特点」</strong>（製品の特長）。点击任意一项即可开始编辑。
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">第二步</p>
+    <h2 class="section-title">编辑产品信息</h2>
+    <p style="font-size:14px; color:var(--text-sub); margin-bottom:16px;">
+      目前共有三个产品条目：<strong>YH880-1、YH880-2、YH880-3</strong>。点击任意一个即可编辑。
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">点击左侧「製品情報（产品信息）」</div>
+          <div class="step-desc">右侧会显示产品列表，点击要编辑的产品名称（如 YH880-1）。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">修改各字段内容</div>
+          <div class="step-desc">编辑界面包含以下字段：</div>
+          <div style="overflow-x:auto; margin-top:10px;">
+            <table class="field-table">
+              <thead><tr><th>字段名称</th><th>说明</th></tr></thead>
+              <tbody>
+                <tr><td class="field-name">製品コード<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">产品编号</span></td><td>如 YH880-1（<strong>请勿修改</strong>）</td></tr>
+                <tr><td class="field-name">製品名<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">产品名称</span></td><td>显示在网站上的产品名称（日文）</td></tr>
+                <tr><td class="field-name">カテゴリ<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">类别/用途</span></td><td>产品面向的行业或用途</td></tr>
+                <tr><td class="field-name">製品説明文<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">产品说明</span></td><td>产品的详细说明文字</td></tr>
+                <tr><td class="field-name">使用用途<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">使用场景</span></td><td>以列表形式列出使用场景，可增删条目</td></tr>
+                <tr><td class="field-name">製品画像<br><span style="font-weight:400;color:var(--text-sub);font-size:12px;">产品图片</span></td><td>点击可上传图片文件（JPG / PNG / SVG）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">上传产品图片（如需更换）</div>
+          <div class="step-desc">
+            点击「製品画像（产品图片）」字段中的上传按钮，从电脑中选择图片文件。<br>
+            支持 <strong>JPG、PNG、SVG</strong> 格式。建议图片宽度在 800px 以上。
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">点击右上角「保存」按钮</div>
+          <div class="step-desc">编辑完成后，点击页面右上角的<strong>「保存」</strong>（保存）按钮提交修改。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">第三步</p>
+    <h2 class="section-title">编辑产品特点</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">点击左侧「製品の特長（产品特点）」</div>
+          <div class="step-desc">右侧会显示「9つの特長（九大特点）」，点击进入编辑界面。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">修改各特点的文字</div>
+          <div class="step-desc">
+            每条特点包含：<strong>特点名称</strong>（title）、<strong>数据/实绩</strong>（stat，可选）、<strong>说明文字</strong>（description）、<strong>备注</strong>（note，可选）。<br>
+            直接在对应文本框中修改即可。
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">点击「保存」提交修改</div>
+          <div class="step-desc">完成后点击右上角的保存按钮。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">保存后的流程</p>
+    <h2 class="section-title">修改什么时候生效？</h2>
+    <p style="font-size:14px; color:var(--text-sub); margin-bottom:16px;">
+      点击保存后，系统会自动处理发布，无需人工干预。全程约需 <strong>3～8 分钟</strong>。
+    </p>
+    <div class="flow">
+      <div class="flow-item"><span class="flow-icon">✏️</span><span class="flow-label">在后台保存</span><span class="flow-sub">管理后台</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item"><span class="flow-icon">📦</span><span class="flow-label">自动提交</span><span class="flow-sub">GitHub</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item"><span class="flow-icon">⚙️</span><span class="flow-label">自动构建</span><span class="flow-sub">3～8分钟</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item"><span class="flow-icon">🌐</span><span class="flow-label">正式发布</span><span class="flow-sub">glocal-action.com</span></div>
+    </div>
+    <div class="url-box">
+      <span class="url-label">正式网站</span>
+      <span class="url-text">https://glocal-action.com/yh880/</span>
+    </div>
+    <div class="callout callout-info" style="margin-top:18px;">
+      <div class="callout-title">ℹ 如何确认修改已生效</div>
+      等待约 5 分钟后，刷新正式网站页面（按 <strong>Ctrl + F5</strong>）即可看到更新内容。<br>
+      如果内容没有变化，请再等几分钟后重试。
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">注意事项</p>
+    <h2 class="section-title">操作时的注意点</h2>
+    <div class="callout callout-warn">
+      <div class="callout-title">⚠ 请勿修改产品编号</div>
+      「製品コード（产品编号）」字段（如 YH880-1）请<strong>不要修改</strong>，否则可能导致网站显示异常。
+    </div>
+    <div class="callout callout-info" style="margin-top:14px;">
+      <div class="callout-title">ℹ 操作无误但画面无反应时</div>
+      如遇登录失败或页面空白，通常是网络问题。请检查 VPN 连接后刷新页面重试。
+    </div>
+    <div class="callout callout-info" style="margin-top:14px;">
+      <div class="callout-title">ℹ 图片上传建议</div>
+      建议使用<strong>白色或透明背景</strong>的产品图片，格式推荐 PNG 或 SVG。<br>
+      图片文件大小请控制在 <strong>2MB 以内</strong>，避免加载过慢。
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <span>YH880 网站管理手册 · 2026年8月</span>
+    <span>管理后台：musical-druid-7c9548.netlify.app/admin/</span>
+  </footer>
+
+</div>
+</body>
+</html>
