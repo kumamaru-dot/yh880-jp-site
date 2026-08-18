@@ -1,6 +1,6 @@
 ---
 import { caseStudies } from '../data/caseStudies';
-const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
+const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
 ---
 
 <section class="section" id="cases">

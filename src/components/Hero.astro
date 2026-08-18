@@ -1,5 +1,5 @@
 ---
-const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
+const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
 const badges = [
   { label: 'RoHS適合', desc: 'EU RoHS指令に適合' },
   { label: 'VOC不使用', desc: '揮発性有機化合物を含まない処方' },

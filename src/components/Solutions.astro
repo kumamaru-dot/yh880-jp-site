@@ -1,5 +1,5 @@
 ---
-const withBase = (path: string) => import.meta.env.BASE_URL + path.replace(/^\//, '');
+const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
 const solutions = [
   {
     title: 'スマート洗浄ライン',
