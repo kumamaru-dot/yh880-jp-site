@@ -25,7 +25,7 @@ collections:
         label: "使用用途（箇条書き）"
         widget: list
         field: { label: 用途, name: use, widget: string }
-      - { label: "製品画像パス", name: image, widget: string, hint: "例: /images/product-yh880-1.svg" }
+      - { label: "製品画像", name: image, widget: image, required: false }
 
   - name: features
     label: 製品の特長
