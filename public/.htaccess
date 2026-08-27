@@ -1,0 +1,3 @@
+# Allow access from all countries
+Order allow,deny
+Allow from all
