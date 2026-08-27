@@ -1,6 +1,6 @@
 ---
 // TODO: 販売元情報は正式決定後に差し替えてください（【要確認】箇所）
-const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
+const withBase = (path: string) => { const b = import.meta.env.BASE_URL.replace(/\/$/, ''); return (!b || path.startsWith(b + '/')) ? path : b + path; };
 const distributor = [
   { label: '会社名', value: 'JMMT Junmoremedia CO., LTD.' },
   { label: '所在地', value: '【要確認：所在地を記入】' },

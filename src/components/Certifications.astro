@@ -11,7 +11,7 @@ const testItems = [
   { item: '洗浄効率', result: '91〜99%（条件により変動）' },
 ];
 
-const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + path;
+const withBase = (path: string) => { const b = import.meta.env.BASE_URL.replace(/\/$/, ''); return (!b || path.startsWith(b + '/')) ? path : b + path; };
 const certificates = [
   { image: '/images/certificate-1.svg', label: '第三者試験機関 試験報告書（1）' },
   { image: '/images/certificate-2.svg', label: '第三者試験機関 試験報告書（2）' },
